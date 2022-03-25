@@ -36,7 +36,19 @@
 	# What was the name of the function we have seen to check the length of a container?  Use your CLI to access the Python documentation and get help(len).
 
 def one(input1, input2):
+	a = len(input1)
+	b = len(input2)
+	if a>b:
+		return str(input1)
+	elif b>a:
+		return str(input2)
+	else:
+		return f'{input1} {input2}'
+	
+
 	return ""
+
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -60,7 +72,15 @@ def one(input1, input2):
 	# No hints for this question
 
 def two(arg1):
-	return "null"
+	if arg1 % 3 == 0 and arg1 % 5 == 0:
+		return "fizzbuzz"
+	elif arg1 % 3 == 0:
+		return"fizz"
+	elif arg1 % 5 == 0:
+		return "buzz"
+	elif arg1 % 3 != 0 or arg1 % 5 != 0:
+		return "null"
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -79,7 +99,12 @@ def two(arg1):
 	# How do we ignore case in a String? help(str) may offer some insight.
 
 def three(input):
-    return 0
+	num_vowels=0
+	for char in input:
+		if char in "aeiouAEIOU":
+			num_vowels = num_vowels+1
+		return num_vowels
+	return 0
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -102,7 +127,17 @@ def three(input):
 
 
 def four(input):
-    return False
+	if "cie" in input:
+		return False
+	if "cei" in input:
+		return True
+	if "ei" in input:
+		return False
+	if "ie" in input:
+		return True
+	else:
+		return False
+
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -122,7 +157,9 @@ def four(input):
 	# You may need to create a list of numbers from 0 to i, take a look at help(range).
 
 def five(input):
-	return 1
+	if input == 0:
+		return 1
+	return input * five(input-1)
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
@@ -144,7 +181,12 @@ def five(input):
 	# How do we find the length of a container, take a look at help(len), you will also need to look at help(str) for String manipulation.
  
 def six(string, int, char):
-	return False
+    if len(string) < int:
+        return False
+    elif string[int -1] == char:
+        return True
+    else:  
+        return False
 
 #------------------------------------------------------------------------------------------------------------------------------------------------------------------ 
 
